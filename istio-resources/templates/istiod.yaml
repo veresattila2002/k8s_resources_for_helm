@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.istioConfig.name.istioD }}
+  namespace: {{ .Values.namespace.argo}}
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  project: {{ .Values.project }}
+  source:
+    repoURL: {{ .Values.istioConfig.repoUrl.istioD }}
+    chart: {{ .Values.istioConfig.chart.istioD }}
+    targetRevision: {{ .Values.istioConfig.targetRevision.istioD }}
+    helm:
+      releaseName: {{ .Values.istioConfig.helm.releaseName.istioD }}
+  destination:
+    server: {{ .Values.destination.server }}
+    namespace: {{ .Values.namespace.istio }}
+  syncPolicy:
+    automated:
+      prune: {{ .Values.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.syncPolicy.automated.selfHeal }}
+    syncOptions:
+      - {{ .Values.syncPolicy.syncOptions }}

@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.istioConfig.name.prometheus }}
+  namespace: {{ .Values.namespace.argo}}
+spec:
+  project: {{ .Values.project }}
+  source:
+    repoURL: {{ .Values.istioConfig.repoUrl.prometheus }}
+    chart: {{ .Values.istioConfig.chart.prometheus }}
+    targetRevision: {{ .Values.istioConfig.targetRevision.prometheus }}
+    helm:
+      releaseName: {{ .Values.istioConfig.helm.releaseName.prometheus }}
+      insecureSkipTLSVerify: {{ .Values.istioConfig.helm.insecureSkipTLSVerify.prometheus }}
+  destination:
+    server: {{ .Values.destination.server }}
+    namespace: {{ .Values.namespace.prometheus }}
+  syncPolicy:
+    automated:
+      prune: {{ .Values.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.syncPolicy.automated.selfHeal }}
+    syncOptions:
+      - {{ .Values.syncPolicy.syncOptions }}

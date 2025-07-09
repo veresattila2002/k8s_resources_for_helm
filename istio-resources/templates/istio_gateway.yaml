@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway 
+metadata:
+  name: {{ .Values.ingressGateway.metadata.name }}
+  namespace: {{ .Values.namespace.istio }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  selector:
+    istio: {{ .Values.ingressGateway.istio }}
+  servers:
+  - port:
+      number: {{ .Values.service.istioService.port.number}}
+      name: {{ .Values.service.istioService.port.name }}
+      protocol: {{ .Values.service.istioService.port.protocol }}
+    hosts:
+      - {{ .Values.hosts.springBootApp }}
+      - {{ .Values.hosts.springBootSecondApp }}

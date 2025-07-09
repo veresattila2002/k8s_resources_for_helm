@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.istioConfig.name.kiali }}
+  namespace: {{ .Values.namespace.argo }}
+spec:
+  project: {{ .Values.project }}
+  source:
+    repoURL: {{ .Values.istioConfig.repoUrl.kiali }}
+    chart: {{ .Values.istioConfig.chart.kiali }}
+    targetRevision: {{ .Values.istioConfig.targetRevision.kiali }}
+    helm:
+      realeasName: {{ .Values.istioConfig.helm.releaseName.kiali }}
+    auth:
+      strategy: {{ .Values.kiali.auth.strategy }}
+    deployment:
+      ingress_enabled: {{ .Values.kiali.deployment.ingress_enabled }}
+    external_services:
+      istio:
+        root_namespace: {{ .Values.kiali.external_services.istio.root_namespace }}
+      prometheus:
+        url: {{ .Values.kiali.external_services.prometheus.url }}
+    istio_namespace: {{ .Values.namespace.istio }}
+  destination:
+    server: {{ .Values.destination.server }}
+    namespace: {{ .Values.namespace.kiali }}
+  syncPolicy:
+    automated:
+      prune: {{ .Values.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.syncPolicy.automated.selfHeal }}
+    syncOptions:
+      - {{ .Values.syncPolicy.syncOptions }}
