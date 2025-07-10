@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: {{ .Release.Name }}-destination-rule
-  namespace: {{ .Values.global.namespace.secondApp }}
+  namespace: {{ .Values.global.namespaces.secondApp }}
   annotations:
     argocd.argoproj.io/sync-wave: "4"
 spec:
