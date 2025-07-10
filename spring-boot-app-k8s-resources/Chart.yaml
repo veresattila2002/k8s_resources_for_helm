@@ -1,5 +1,5 @@
 apiVersion: v2
-name: spring-boot-app-k8s-resources
+name: spring-boot-app
 description: A Helm chart for Kubernetes
 
 type: application
