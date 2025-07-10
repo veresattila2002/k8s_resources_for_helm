@@ -2,8 +2,8 @@ apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: {{ .Release.Name }}-destination-rule
-  namespace: {{ .Values.namespace.secondApp }}
+  namespace: {{ .Values.global.namespace.secondApp }}
   annotations:
     argocd.argoproj.io/sync-wave: "4"
 spec:
-  host: {{ .Values.destination.hostSecondApp }}
+  host: {{ .Values.global.destination.hostSecondApp }}

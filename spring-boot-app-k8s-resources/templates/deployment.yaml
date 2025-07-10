@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.global.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Chart.Name }}
@@ -15,7 +15,7 @@ spec:
         release: {{ .Release.Name}}
     spec:
       containers:
-      - name: {{ .Values.appName}}
-        image: "{{ .Values.image.firstAppName }}:{{ .Values.image.firstAppTag }}"
+      - name: {{ .Values.global.appName}}
+        image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         ports:
-        - containerPort: {{ .Values.containerPort.firstAppPort }}
+        - containerPort: {{ .Values.global.containerPort.firstAppPort }}

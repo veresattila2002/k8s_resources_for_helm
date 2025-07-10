@@ -4,20 +4,20 @@ metadata:
   name: {{ .Release.Name }}-application
   namespace: {{ .Values.namespace.argo }}
 spec:
-  project: {{ .Values.project }}
+  project: {{ .Values.global.project }}
 
   source:
-    repoURL: {{ .Values.source.repoUrlAppOfApps }}
-    targetRevision: {{ .Values.source.targetRevision }}
-    path:  {{ .Values.source.path }}
+    repoURL: {{ .Values.source.repoUrlApp }}
+    targetRevision: {{ .Values.global.source.targetRevision }}
+    path:  {{ .Values.global.source.path }}
   
   destination:
-    server: {{ .Values.destinationApplication.server }}
-    namespace: {{ .Values.namespace.appOfApps }}
+    server: {{ .Values.global.destinationApplication.server }}
+    namespace: {{ .Values.global.namespace.appOfApps }}
 
   syncPolicy:
     automated:
-      prune: {{ .Values.syncPolicy.automated.prune }}
-      selfHeal: {{ .Values.syncPolicy.automated.selfHeal }}
+      prune: {{ .Values.global.syncPolicy.automated.prune }}
+      selfHeal: {{ .Values.global.syncPolicy.automated.selfHeal }}
     syncOptions:
-      - {{ .Values.syncPolicy.syncOptions }}
+      - {{ .Values.global.syncPolicy.syncOptions }}

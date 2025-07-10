@@ -6,7 +6,7 @@ spec:
   selector:
     app: {{ .Release.Name }}-svc
   ports:
-    - protocol: {{ .Values.service.appService.servicePort.protocol}}
-      port: {{ .Values.service.appService.servicePort.port }}
-      targetPort: {{ .Values.containerPort.firstAppPort }}
-  type: {{ .Values.service.appService.serviceType }}
+    - protocol: {{ .Values.service.servicePort.protocol}}
+      port: {{ .Values.service.servicePort.port }}
+      targetPort: {{ .Values.global.containerPort.firstAppPort }}
+  type: {{ .Values.service.serviceType }}

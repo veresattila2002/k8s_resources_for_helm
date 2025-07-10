@@ -2,18 +2,18 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: {{ .Release.Name}}-vs
-  namespace: {{ .Values.namespace.firstApp }}
+  namespace: {{ .Values.global.namespace.firstApp }}
 spec:
   hosts: 
-    {{ .Values.hosts.springBootApp }}
+    {{ .Values.global.hosts.springBootApp }}
   gateways:  
-    {{ .Values.gateways }}
+    {{ .Values.global.gateways }}
   http:
     - match:
       - uri:
-          prefix: {{ .Values.springBootApp }}
+          prefix: {{ .Values.global.prefix.springBootApp }}
       route:
       - destination:
-          host: {{ .Values.destination.hostFirstApp }}
+          host: {{ .Values.global.destination.hostFirstApp }}
           port:
             number: {{ .Values.destination.port.number }}
