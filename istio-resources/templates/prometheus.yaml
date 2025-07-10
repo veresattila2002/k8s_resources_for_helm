@@ -20,4 +20,4 @@ spec:
       prune: {{ .Values.global.syncPolicy.automated.prune }}
       selfHeal: {{ .Values.global.syncPolicy.automated.selfHeal }}
     syncOptions:
-      - {{ .Values.globalsyncPolicy.syncOptions }}
+      - {{ .Values.global.syncPolicy.syncOptions }}
