@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: {{ .Release.Name}}-vs
+  name: {{ .Chart.Name}}-vs
   namespace: {{ .Values.global.namespaces.firstApp }}
 spec:
   hosts: 
