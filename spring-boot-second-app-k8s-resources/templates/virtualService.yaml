@@ -5,9 +5,9 @@ metadata:
   namespace: {{ .Values.global.namespaces.secondApp }}
 spec:
   hosts:
-    {{ .Values.global.hosts.springBootSecondApp }}
+  - {{ .Values.global.hosts.springBootSecondApp }}
   gateways:
-    {{ .Values.global.gateways }}
+  - {{ .Values.global.gateways }}
   http:
     - match:
       - uri:

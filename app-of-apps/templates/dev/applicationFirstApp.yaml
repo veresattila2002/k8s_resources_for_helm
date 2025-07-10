@@ -9,14 +9,13 @@ spec:
   source:
     repoURL: {{ .Values.source.repoUrlApp }}
     targetRevision: {{ .Values.global.source.targetRevision }}
-    path:  {{ .Values.global.source.pathApp }}
+    path: {{ .Values.global.source.pathFirstApp }}
     helm:
       valueFiles:
       - values.yaml
   destination:
     server: {{ .Values.global.destinationApplication.server }}
-    namespace: {{ .Values.global.namespaces.appOfApps }}
-
+    namespace: {{ .Values.global.namespaces.firstApp }}
   syncPolicy:
     automated:
       prune: {{ .Values.global.syncPolicy.automated.prune }}

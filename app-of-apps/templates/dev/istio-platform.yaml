@@ -1,20 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Release.Name }}-application
+  name: {{ .Values.global.platformName }}
   namespace: {{ .Values.global.namespaces.argo }}
 spec:
   project: {{ .Values.global.project }}
 
   source:
-    repoURL: {{ .Values.source.repoUrlSecondApp }}
+    repoURL: {{ .Values.source.repoUrlApp }}
     targetRevision: {{ .Values.global.source.targetRevision }}
-    path: {{ .Values.global.source.path }}
-
+    path: {{ .Values.global.source.pathIstioPlatform }}
+    helm:
+      valueFiles:
+      - values.yaml
   destination:
     server: {{ .Values.global.destinationApplication.server }}
-    namespace: {{ .Values.global.namespaces.secondApp }}
-
+    namespace: {{ .Values.global.namespaces.istioPlatform }}
   syncPolicy:
     automated:
       prune: {{ .Values.global.syncPolicy.automated.prune }}

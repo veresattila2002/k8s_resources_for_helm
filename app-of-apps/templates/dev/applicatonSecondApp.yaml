@@ -7,12 +7,17 @@ spec:
   project: {{ .Values.global.project }}
 
   source:
-    repoURL: {{ .Values.source.repoUrlFirstApp }}
+    repoURL: {{ .Values.source.repoUrlApp }}
     targetRevision: {{ .Values.global.source.targetRevision }}
-    path: {{ .Values.global.source.path }}
+    path: {{ .Values.global.source.pathSecondApp }}
+    helm:
+      valueFiles:
+      - values.yaml
+
   destination:
     server: {{ .Values.global.destinationApplication.server }}
-    namespace: {{ .Values.global.namespaces.firstApp }}
+    namespace: {{ .Values.global.namespaces.secondApp }}
+
   syncPolicy:
     automated:
       prune: {{ .Values.global.syncPolicy.automated.prune }}
