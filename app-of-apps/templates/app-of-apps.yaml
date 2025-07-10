@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ .Release.Name }}-application
-  namespace: {{ .Values.namespace.argo }}
+  namespace: {{ .Values.namespaces.argo }}
 spec:
   project: {{ .Values.global.project }}
 
@@ -13,7 +13,7 @@ spec:
   
   destination:
     server: {{ .Values.global.destinationApplication.server }}
-    namespace: {{ .Values.global.namespace.appOfApps }}
+    namespace: {{ .Values.global.namespaces.appOfApps }}
 
   syncPolicy:
     automated:

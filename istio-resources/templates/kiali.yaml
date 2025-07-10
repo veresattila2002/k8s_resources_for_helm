@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ .Values.istioConfig.name.kiali }}
-  namespace: {{ .Values.global.namespace.argo }}
+  namespace: {{ .Values.global.namespaces.argo }}
 spec:
   project: {{ .Values.global.project }}
   source:
@@ -20,10 +20,10 @@ spec:
         root_namespace: {{ .Values.kiali.external_services.istio.root_namespace }}
       prometheus:
         url: {{ .Values.kiali.external_services.prometheus.url }}
-    istio_namespace: {{ .Values.global.namespace.istio }}
+    istio_namespace: {{ .Values.global.namespaces.istio }}
   destination:
     server: {{ .Values.global.destination.server }}
-    namespace: {{ .Values.global.namespace.kiali }}
+    namespace: {{ .Values.global.namespaces.kiali }}
   syncPolicy:
     automated:
       prune: {{ .Values.global.syncPolicy.automated.prune }}

@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ .Values.istioConfig.name.istioD }}
-  namespace: {{ .Values.global.namespace.argo}}
+  namespace: {{ .Values.global.namespaces.argo}}
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
@@ -15,7 +15,7 @@ spec:
       releaseName: {{ .Values.istioConfig.helm.releaseName.istioD }}
   destination:
     server: {{ .Values.global.destination.server }}
-    namespace: {{ .Values.global.namespace.istio }}
+    namespace: {{ .Values.global.namespaces.istio }}
   syncPolicy:
     automated:
       prune: {{ .Values.global.syncPolicy.automated.prune }}

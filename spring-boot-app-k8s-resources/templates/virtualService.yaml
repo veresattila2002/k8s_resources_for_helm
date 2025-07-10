@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: {{ .Release.Name}}-vs
-  namespace: {{ .Values.global.namespace.firstApp }}
+  namespace: {{ .Values.global.namespaces.firstApp }}
 spec:
   hosts: 
     {{ .Values.global.hosts.springBootApp }}

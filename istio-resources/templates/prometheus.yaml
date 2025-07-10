@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ .Values.istioConfig.name.prometheus }}
-  namespace: {{ .Values.global.namespace.argo}}
+  namespace: {{ .Values.global.namespaces.argo}}
 spec:
   project: {{ .Values.global.project }}
   source:
@@ -14,7 +14,7 @@ spec:
       insecureSkipTLSVerify: {{ .Values.istioConfig.helm.insecureSkipTLSVerify.prometheus }}
   destination:
     server: {{ .Values.global.destination.server }}
-    namespace: {{ .Values.global.namespace.prometheus }}
+    namespace: {{ .Values.global.namespaces.prometheus }}
   syncPolicy:
     automated:
       prune: {{ .Values.global.syncPolicy.automated.prune }}
