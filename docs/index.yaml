@@ -3,7 +3,30 @@ entries:
   app-of-apps:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.961224335+02:00"
+    created: "2025-07-11T10:15:29.131187002+02:00"
+    dependencies:
+    - condition: spring-boot-app.enabled
+      name: spring-boot-app
+      repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+      version: 0.1.5
+    - condition: istio-resources.enabled
+      name: istio-resources
+      repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+      version: 0.1.6
+    - condition: spring-boot-second-app.enabled
+      name: spring-boot-second-app
+      repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+      version: 0.1.5
+    description: A Helm chart for Kubernetes
+    digest: 6d81bbd1a63984489fcc011a185aa4956aa59a1deac7e7c93ce0d4702db124e3
+    name: app-of-apps
+    type: application
+    urls:
+    - https://veresattila2002.github.io/k8s_resources_for_helm/app-of-apps-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-11T10:15:29.130770034+02:00"
     dependencies:
     - name: spring-boot-app
       repository: https://veresattila2002.github.io/k8s_resources_for_helm/
@@ -23,7 +46,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.960726366+02:00"
+    created: "2025-07-11T10:15:29.130023739+02:00"
     description: A Helm chart for Kubernetes
     digest: 6c930889ca188d36f824ac310d01bb874fd50bf9261020aff8b2e5c5a687577b
     name: app-of-apps
@@ -33,7 +56,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.960575789+02:00"
+    created: "2025-07-11T10:15:29.129564407+02:00"
     description: A Helm chart for Kubernetes
     digest: a5abb40203603e0848c0b6aa55c66c28b11a70a6bb6388e9748aa520af790c3f
     name: app-of-apps
@@ -43,7 +66,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.960440992+02:00"
+    created: "2025-07-11T10:15:29.129100661+02:00"
     description: A Helm chart for Kubernetes
     digest: 8b5fda63ef9253863b9515f4c4d7c305af59a4b894559cc67b5a807ff1e32ec4
     name: app-of-apps
@@ -53,7 +76,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.960282813+02:00"
+    created: "2025-07-11T10:15:29.128667869+02:00"
     description: A Helm chart for Kubernetes
     digest: 9cbebe30474c13448ad068eeacd0761247a2579cecd6ed42057cca80f7c4a854
     name: app-of-apps
@@ -63,7 +86,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.960158791+02:00"
+    created: "2025-07-11T10:15:29.128241251+02:00"
     description: A Helm chart for Kubernetes
     digest: d3d2ae1eb6d2decbb4e4d4e559d632bdd8465f0db1dae990d042b27c5b0c4762
     name: app-of-apps
@@ -73,7 +96,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.959958751+02:00"
+    created: "2025-07-11T10:15:29.127673698+02:00"
     description: A Helm chart for Kubernetes
     digest: a292b2945673952f412b89de0d924579ac2157c90df291ac5b1637553604c4cf
     name: app-of-apps
@@ -84,9 +107,9 @@ entries:
   istio-resources:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.962291573+02:00"
+    created: "2025-07-11T10:15:29.134887889+02:00"
     description: A Helm chart for Kubernetes
-    digest: 564de48926bd5649d4f8736bc5ed95d9d916afcbe46a1cc64568d9288faed373
+    digest: d8426757d6a634bbc90661f5f5ba5fa7b6f9c583af20d042ee2ed9b053fb02ac
     name: istio-resources
     type: application
     urls:
@@ -94,7 +117,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.962137414+02:00"
+    created: "2025-07-11T10:15:29.133605477+02:00"
     description: A Helm chart for Kubernetes
     digest: 3a009efa190f5bd39a71430c77f253c47643a44205274d33794d100bdfc1e7b6
     name: istio-resources
@@ -104,7 +127,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.961995176+02:00"
+    created: "2025-07-11T10:15:29.133231543+02:00"
     description: A Helm chart for Kubernetes
     digest: ce20c9564a727c808751078587e27440aee9a2a5dc82a78306383b20e2db16ef
     name: istio-resources
@@ -114,7 +137,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.961851117+02:00"
+    created: "2025-07-11T10:15:29.132769925+02:00"
     description: A Helm chart for Kubernetes
     digest: 399cd628b5466a0451ea258cf1135e9a2879b2a88bb8b62cb39bcf8f73c6d027
     name: istio-resources
@@ -124,7 +147,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.961649787+02:00"
+    created: "2025-07-11T10:15:29.132362258+02:00"
     description: A Helm chart for Kubernetes
     digest: 17c287e4050824b42031ce03d22c3d77af5ac5b13836e7cf319e4aeffd815de1
     name: istio-resources
@@ -134,7 +157,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.961525519+02:00"
+    created: "2025-07-11T10:15:29.132016803+02:00"
     description: A Helm chart for Kubernetes
     digest: 56827d753a6e6ba1b53fc2299fcd50d5b2b126fb96ca5dcf979e53179afec106
     name: istio-resources
@@ -144,7 +167,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.961363374+02:00"
+    created: "2025-07-11T10:15:29.131667921+02:00"
     description: A Helm chart for Kubernetes
     digest: 9790946fddc6fded86941907c4ba5259abc1864689438c9e21cf8f2227ac6098
     name: istio-resources
@@ -155,9 +178,9 @@ entries:
   spring-boot-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964233872+02:00"
+    created: "2025-07-11T10:15:29.136991989+02:00"
     description: A Helm chart for Kubernetes
-    digest: 2fddca3da77e831fc11f0a82c4df5d696f313e97dc55a7cc748ad0aea87b0e19
+    digest: 4b2aa0711d9bb799d13b6d551d28765410f266fcf5012e077e8d2cdfcbd9b6de
     name: spring-boot-app
     type: application
     urls:
@@ -165,7 +188,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964093981+02:00"
+    created: "2025-07-11T10:15:29.136882617+02:00"
     description: A Helm chart for Kubernetes
     digest: 54ed052065be37e4b626cddc5f4cfa5ebadcad200595d57a343b628d03a01d95
     name: spring-boot-app
@@ -175,7 +198,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.963847811+02:00"
+    created: "2025-07-11T10:15:29.136543881+02:00"
     description: A Helm chart for Kubernetes
     digest: b5412a8bedbd996fea884a0a232e394178e927424b46bcf5e28677d84d46203c
     name: spring-boot-app
@@ -185,7 +208,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.962690236+02:00"
+    created: "2025-07-11T10:15:29.136223675+02:00"
     description: A Helm chart for Kubernetes
     digest: 69a7db3a69efd1bd647bcea625e8bcb4bcf378c804ee66dcef71a0924e4e2670
     name: spring-boot-app
@@ -195,7 +218,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.962578499+02:00"
+    created: "2025-07-11T10:15:29.135840168+02:00"
     description: A Helm chart for Kubernetes
     digest: fec07a44b7130f02b925a50a259fe0ee76f09e471e77e3d577bc26650d65f796
     name: spring-boot-app
@@ -205,7 +228,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.962457008+02:00"
+    created: "2025-07-11T10:15:29.135427668+02:00"
     description: A Helm chart for Kubernetes
     digest: ba7773f1534205a5086c37b1a1df89d7f5bf65b70cb923231ac836b10be2d1b9
     name: spring-boot-app
@@ -216,9 +239,9 @@ entries:
   spring-boot-second-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.965025543+02:00"
+    created: "2025-07-11T10:15:29.139037392+02:00"
     description: A Helm chart for Kubernetes
-    digest: ee8792524a9da25e3306ddc0bc9858add55d0e0a80d17bfafe37e01637628fd7
+    digest: 9218e8c360a1dd594d5ebfa1d470ba7dadb39049fa741e107e3b1dc9ebb2ce9d
     name: spring-boot-second-app
     type: application
     urls:
@@ -226,7 +249,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964915637+02:00"
+    created: "2025-07-11T10:15:29.138917725+02:00"
     description: A Helm chart for Kubernetes
     digest: 4869a8dd63f0d006ad036149a1814fb97322aec8248fdb0e82b263723056f5b5
     name: spring-boot-second-app
@@ -236,7 +259,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964809757+02:00"
+    created: "2025-07-11T10:15:29.138526647+02:00"
     description: A Helm chart for Kubernetes
     digest: f2543af258d60f51d651ab0a460296c4aeeaf88d77dd02dbb1c4d009182f5847
     name: spring-boot-second-app
@@ -246,7 +269,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964696932+02:00"
+    created: "2025-07-11T10:15:29.138105645+02:00"
     description: A Helm chart for Kubernetes
     digest: 21eb9e831b91c8da75c9f8fd95c226b7512d8d0180225e5f8392e0a8757a9be5
     name: spring-boot-second-app
@@ -256,7 +279,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964585412+02:00"
+    created: "2025-07-11T10:15:29.137721901+02:00"
     description: A Helm chart for Kubernetes
     digest: ba725e18375fd8665e68b0e0d090da96055d3a4496fdfc11db67ec9df1f16e8c
     name: spring-boot-second-app
@@ -266,7 +289,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-10T16:48:17.964374698+02:00"
+    created: "2025-07-11T10:15:29.137378487+02:00"
     description: A Helm chart for Kubernetes
     digest: d254ae8d995df6310e916715093d76dcf5e39af9130d5fb5d450e4c808b42d96
     name: spring-boot-second-app
@@ -274,4 +297,4 @@ entries:
     urls:
     - https://veresattila2002.github.io/k8s_resources_for_helm/spring-boot-second-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-10T16:48:17.959539163+02:00"
+generated: "2025-07-11T10:15:29.126830565+02:00"
