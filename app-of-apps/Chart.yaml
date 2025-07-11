@@ -9,7 +9,7 @@ version: 0.1.7
 appVersion: "1.16.0"
 dependencies:
   - name: spring-boot-app
-    version: 0.1.5
+    version: 0.1.6
     repository: https://veresattila2002.github.io/k8s_resources_for_helm/
     condition: spring-boot-app.enabled
   - name: istio-resources
@@ -17,6 +17,6 @@ dependencies:
     repository: https://veresattila2002.github.io/k8s_resources_for_helm/
     condition: istio-resources.enabled
   - name: spring-boot-second-app
-    version: 0.1.5
+    version: 0.1.6
     repository: https://veresattila2002.github.io/k8s_resources_for_helm/
     condition: spring-boot-second-app.enabled
