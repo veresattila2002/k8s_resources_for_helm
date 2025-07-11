@@ -1,3 +1,138 @@
-spring-boot-app: {}
-spring-boot-second-app: {}
-istio-resources: {}
+global:
+  namespaces:
+    firstApp: spring-boot-app
+    secondApp: spring-boot-second-app
+    argo : argo
+    appOfApps: app-of-apps
+    istio: istio-system
+    prometheus: prometheus-system
+    kiali: kiali-system
+    istioPlatform: istio-platform
+
+  replicaCount: 1
+
+  containerPort:
+    firstAppPort: 8080
+    secondAppPort: 8081
+
+  appName: app
+
+  platformName: istio-platform
+
+  hosts:
+    springBootApp: "app1.demo.hu"
+    springBootSecondApp: "app2.demo.hu"
+
+  gateway: istio-system/spring-boot-app-gateway
+
+  prefix:
+    springBootApp: /message
+    springBootSecondApp: /getmessage
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      optionOne: CreateNamespace=true
+
+  project: default
+  
+
+  destinationApplication:
+    server: https://kubernetes.default.svc
+
+  source:
+    targetRevision: HEAD
+    path: dev
+    pathApp: app-of-apps/dev
+    pathFirstApp: spring-boot-app-k8s-resources
+    pathSecondApp: spring-boot-second-app-k8s-resources
+    pathIstioPlatform: istio-resources
+  
+  destination:
+    hostFirstApp: spring-boot-app.spring-boot-app.svc.cluster.local
+    hostSecondApp: spring-boot-second-app.spring-boot-second-app.svc.cluster.local
+    port:
+      number: 80
+
+istio-resources:
+
+  ingressGateway:
+    metadata: 
+      name: spring-boot-app-gateway
+    istio:  ingressgateway
+
+  service:
+    port:
+      number: 80
+      name: http
+      protocol: HTTP
+
+  istioConfig:
+    name: 
+      istioBase: istio-base
+      istioD: istiod
+      prometheus: prometheus
+      kiali: kiali
+
+    repoUrl:
+      istioBase: https://istio-release.storage.googleapis.com/charts
+      istioD: https://istio-release.storage.googleapis.com/charts
+      prometheus: https://prometheus-community.github.io/helm-charts
+      kiali: https://kiali.org/helm-charts
+
+    chart:
+      istioBase: base
+      istioD: istiod
+      prometheus: prometheus
+      kiali: kiali-server
+
+    targetRevision:
+      istioBase: 1.26.2
+      istioD: 1.26.2
+      prometheus: 25.21.0
+      kiali: 1.82.0
+
+    helm:
+      releaseName:
+        istioBase: istio-base
+        istioD: istiod
+        prometheus: prometheus
+        kiali: kiali
+      insecureSkipTLSVerify:
+        prometheus: true
+
+  kiali:
+    auth:
+      strategy: anonymous
+    deployment:
+      ingress_enabled: true
+    external_services:
+      istio:
+        root_namespace: istio-system
+      prometheus:
+        url: "http://prometheus-server.prometheus-system:80"
+    istio_namespace: istio-system
+
+spring-boot-app:
+  image:
+    name: ghcr.io/veresattila2002/helloword
+    tag: "3.0"
+
+  service:
+    servicePort:
+      protocol: TCP
+      port: 80
+    serviceType: ClusterIP
+
+spring-boot-second-app:
+  image:
+    name: ghcr.io/veresattila2002/ujsecondapp
+    tag: "2.0"
+
+  service:
+    servicePort:
+      protocol: TCP
+      port: 80
+    serviceType: ClusterIP
