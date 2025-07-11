@@ -7,7 +7,7 @@ spec:
   hosts:
   - {{ .Values.global.hosts.springBootSecondApp }}
   gateways:
-  - {{ .Values.global.gateways }}
+  - {{ .Values.global.gateway }}
   http:
     - match:
       - uri:
