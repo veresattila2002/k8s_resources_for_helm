@@ -16,4 +16,4 @@ spec:
       - destination:
           host: {{ .Values.global.destination.hostSecondApp }}
           port:
-            number: {{ .Values.destination.port.number }}
+            number: {{ .Values.global.destinationPort.port.number }}
