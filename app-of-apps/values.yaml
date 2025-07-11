@@ -1,3 +1,6 @@
+source:
+  repoUrlApp: https://github.com/veresattila2002/k8s_resources_for_helm.git
+
 global:
   namespaces:
     firstApp: spring-boot-app
