@@ -1,0 +1,9 @@
+dependencies:
+- name: istio-resources
+  repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+  version: 0.1.7
+- name: app-of-apps
+  repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+  version: 0.1.8
+digest: sha256:3273ca9e3865206d13bff6ef7a43b3bddd26988df1d83d60f0c1c40a0dce85cc
+generated: "2025-07-11T14:08:03.219567382+02:00"
