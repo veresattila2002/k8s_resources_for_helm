@@ -22,7 +22,7 @@ spec:
         url: {{ .Values.kiali.external_services.prometheus.url }}
     istio_namespace: {{ .Values.global.namespaces.istio }}
   destination:
-    server: {{ .Values.global.destinationApplicationination.server }}
+    server: {{ .Values.global.destinationApplication.server }}
     namespace: {{ .Values.global.namespaces.kiali }}
   syncPolicy:
     automated:
