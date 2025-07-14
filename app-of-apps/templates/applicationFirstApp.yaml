@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: {{ .Values.source.repoUrlApp }}
     targetRevision: {{ .Values.global.source.targetRevision }}
-    path: {{ .Values.global.source.pathFirstApp }}
+    chart: {{ .Values.global.source.pathFirstApp }}
     helm:
       valueFiles:
       - values.yaml
