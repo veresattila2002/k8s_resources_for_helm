@@ -1,5 +1,4 @@
-source:
-  repoUrlApp: https://github.com/veresattila2002/k8s_resources_for_helm.git
+
 
 global:
   namespaces:
@@ -60,25 +59,30 @@ global:
       number: 80
 
 
-app-of-apps:
-  spring-boot-app:
-    image:
-      name: ghcr.io/veresattila2002/helloword
-      tag: "3.0"
+spring-boot-app:
+  source:
+    repoUrlApp: https://github.com/veresattila2002/k8s_resources_for_helm.git
 
-    service:
-      servicePort:
-        protocol: TCP
-        port: 80
-      serviceType: ClusterIP
+  image:
+    name: ghcr.io/veresattila2002/helloword
+    tag: "3.0"
 
-  spring-boot-second-app:
-    image:
-      name: ghcr.io/veresattila2002/ujsecondapp
-      tag: "2.0"
+  service:
+    servicePort:
+      protocol: TCP
+      port: 80
+    serviceType: ClusterIP
 
-    service:
-      servicePort:
-        protocol: TCP
-        port: 80
-      serviceType: ClusterIP
+spring-boot-second-app:
+  source:
+    repoUrlApp: https://github.com/veresattila2002/k8s_resources_for_helm.git
+
+  image:
+    name: ghcr.io/veresattila2002/ujsecondapp
+    tag: "2.0"
+
+  service:
+    servicePort:
+      protocol: TCP
+      port: 80
+    serviceType: ClusterIP
