@@ -5,12 +5,7 @@ description: A Helm chart for Kubernetes
 type: application
 
 
-version: 0.1.3
+version: 0.1.4
 
 
 appVersion: "1.16.0"
-
-dependencies:
-  - name: istio-resources
-    version: 0.1.10
-    repository: https://veresattila2002.github.io/k8s_resources_for_helm/
