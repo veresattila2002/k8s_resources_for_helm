@@ -1,6 +1,6 @@
 dependencies:
 - name: istio-resources
   repository: https://veresattila2002.github.io/k8s_resources_for_helm/
-  version: 0.1.12
-digest: sha256:cc58d036227f80568fae235fc50e33aa91c0598f919e4b8037f751a6c62416c8
-generated: "2025-07-14T16:25:22.454922785+02:00"
+  version: 0.1.13
+digest: sha256:2c9e4a9d2a5bb417d19f9f8d4b75d34ae377b2c6b83bfd6aa44d092cff9bfb08
+generated: "2025-07-14T16:43:00.653305718+02:00"
