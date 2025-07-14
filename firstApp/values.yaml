@@ -1,5 +1,3 @@
-
-
 global:
   namespaces:
     firstApp: spring-boot-app
@@ -44,13 +42,7 @@ global:
   destinationApplication:
     server: https://kubernetes.default.svc
 
-  source:
-    targetRevision: HEAD
-    path: dev
-    pathApp: app-of-apps/dev
-    pathFirstApp: spring-boot-app-k8s-resources/templates/dev
-    pathSecondApp: spring-boot-second-app-k8s-resources/templates/dev
-    pathIstioPlatform: istio-resources/templates
+
   
   destination:
     hostFirstApp: spring-boot-app.spring-boot-app.svc.cluster.local
