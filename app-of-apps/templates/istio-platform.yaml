@@ -8,8 +8,8 @@ spec:
 
   source:
     repoURL: {{ .Values.source.repoUrlApp }}
-    targetRevision: {{ .Values.global.source.targetRevision }}
-    path: {{ .Values.global.source.pathIstioPlatform }}
+    targetRevision: {{ .Values.global.source.targetRevisionIstio }}
+    chart: {{ .Values.global.source.pathIstioPlatform }}
     helm:
       valueFiles:
       - values.yaml

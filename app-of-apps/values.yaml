@@ -46,11 +46,12 @@ global:
 
   source:
     targetRevision: 0.1.2
+    targetRevisionIstio: 0.1.5
     path: dev
     pathApp: app-of-apps/dev
     pathFirstApp: firstApp
     pathSecondApp: secondApp
-    pathIstioPlatform: istio-resources/templates
+    pathIstioPlatform: platform
   
   destination:
     hostFirstApp: spring-boot-app.spring-boot-app.svc.cluster.local

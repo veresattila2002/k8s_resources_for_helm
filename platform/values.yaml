@@ -43,7 +43,7 @@ global:
     server: https://kubernetes.default.svc
 
   source:
-    targetRevision: HEAD
+    targetRevision: 0.1.11
     path: dev
     pathApp: app-of-apps
     pathFirstApp: spring-boot-app-k8s-resources
@@ -59,62 +59,61 @@ global:
 source:
     repoUrlApp: https://github.com/veresattila2002/k8s_resources_for_helm.git
 
-platform:
-  istio-resources:
+istio-resources:
 
-    ingressGateway:
-      metadata: 
-        name: spring-boot-app-gateway
-      istio:  ingressgateway
+  ingressGateway:
+    metadata: 
+      name: spring-boot-app-gateway
+    istio:  ingressgateway
 
-    service:
-      port:
-        number: 80
-        name: http
-        protocol: HTTP
+  service:
+    port:
+      number: 80
+      name: http
+      protocol: HTTP
 
-    istioConfig:
-      name: 
+  istioConfig:
+    name: 
+      istioBase: istio-base
+      istioD: istiod
+      prometheus: prometheus
+      kiali: kiali
+
+    repoUrl:
+      istioBase: https://istio-release.storage.googleapis.com/charts
+      istioD: https://istio-release.storage.googleapis.com/charts
+      prometheus: https://prometheus-community.github.io/helm-charts
+      kiali: https://kiali.org/helm-charts
+
+    chart:
+      istioBase: base
+      istioD: istiod
+      prometheus: prometheus
+      kiali: kiali-server
+
+    targetRevision:
+      istioBase: 1.26.2
+      istioD: 1.26.2
+      prometheus: 25.21.0
+      kiali: 1.82.0
+
+    helm:
+      releaseName:
         istioBase: istio-base
         istioD: istiod
         prometheus: prometheus
         kiali: kiali
+      insecureSkipTLSVerify:
+        prometheus: true
 
-      repoUrl:
-        istioBase: https://istio-release.storage.googleapis.com/charts
-        istioD: https://istio-release.storage.googleapis.com/charts
-        prometheus: https://prometheus-community.github.io/helm-charts
-        kiali: https://kiali.org/helm-charts
-
-      chart:
-        istioBase: base
-        istioD: istiod
-        prometheus: prometheus
-        kiali: kiali-server
-
-      targetRevision:
-        istioBase: 1.26.2
-        istioD: 1.26.2
-        prometheus: 25.21.0
-        kiali: 1.82.0
-
-      helm:
-        releaseName:
-          istioBase: istio-base
-          istioD: istiod
-          prometheus: prometheus
-          kiali: kiali
-        insecureSkipTLSVerify:
-          prometheus: true
-
-    kiali:
-      auth:
-        strategy: anonymous
-      deployment:
-        ingress_enabled: true
-      external_services:
-        istio:
-          root_namespace: istio-system
-        prometheus:
-          url: "http://prometheus-server.prometheus-system:80"
-      istio_namespace: istio-system
+  kiali:
+    auth:
+      strategy: anonymous
+    deployment:
+      ingress_enabled: true
+    external_services:
+      istio:
+        root_namespace: istio-system
+      prometheus:
+        url: "http://prometheus-server.prometheus-system:80"
+    istio_namespace: istio-system
