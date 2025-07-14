@@ -1,6 +1,6 @@
 dependencies:
 - name: spring-boot-app
   repository: https://veresattila2002.github.io/k8s_resources_for_helm/
-  version: 0.1.11
-digest: sha256:b4c8ddacf7b5d23ec733b96917fb691c9838da9c523bd37b3301b08c38e50995
-generated: "2025-07-14T12:36:15.609250922+02:00"
+  version: 0.1.12
+digest: sha256:579aafa2fea99a3ce87245d54bb704d56c8bbf593131467ebf19048f3d000a17
+generated: "2025-07-14T12:58:45.689446824+02:00"

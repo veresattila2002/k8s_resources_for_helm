@@ -1,9 +1,39 @@
 apiVersion: v1
 entries:
+  firstApp:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-14T12:59:25.347290177+02:00"
+    dependencies:
+    - name: spring-boot-app
+      repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+      version: 0.1.12
+    description: A Helm chart for Kubernetes
+    digest: fe92ad6c386329f467c3afa9074c822541a8d9db671b369348ae034e448b05e2
+    name: firstApp
+    type: application
+    urls:
+    - https://veresattila2002.github.io/k8s_resources_for_helm/firstApp-0.1.1.tgz
+    version: 0.1.1
+  secondApp:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-14T12:59:25.347812603+02:00"
+    dependencies:
+    - name: spring-boot-second-app
+      repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+      version: 0.1.12
+    description: A Helm chart for Kubernetes
+    digest: a005395feab11974358be75e131c57f1cb1c5d33baeff60710c6d75f70214b8b
+    name: secondApp
+    type: application
+    urls:
+    - https://veresattila2002.github.io/k8s_resources_for_helm/secondApp-0.1.1.tgz
+    version: 0.1.1
   spring-boot-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-14T12:57:38.062447694+02:00"
+    created: "2025-07-14T12:59:25.348070067+02:00"
     description: A Helm chart for Kubernetes
     digest: a07bac62cfa8a40da14cd63dc0b7cec53a8a7100f1559cc891f7d19d43a6667e
     name: spring-boot-app
@@ -14,7 +44,7 @@ entries:
   spring-boot-second-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-14T12:57:38.062653694+02:00"
+    created: "2025-07-14T12:59:25.348191558+02:00"
     description: A Helm chart for Kubernetes
     digest: 32ab9872353de68223149f18330f821964f75a0719a66e48becdeea7ea1eef69
     name: spring-boot-second-app
@@ -22,4 +52,4 @@ entries:
     urls:
     - https://veresattila2002.github.io/k8s_resources_for_helm/spring-boot-second-app-0.1.12.tgz
     version: 0.1.12
-generated: "2025-07-14T12:57:38.061879447+02:00"
+generated: "2025-07-14T12:59:25.346534999+02:00"
