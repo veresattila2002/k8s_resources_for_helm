@@ -8,3 +8,10 @@ version: 0.1.9
 
 appVersion: "1.16.0"
 
+dependencies:
+- name: spring-boot-app-k8s-resources
+  version: 0.1.10
+  repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+- name: spring-boot-second-app-k8s-resources
+  version: 0.1.10
+  repository: https://veresattila2002.github.io/k8s_resources_for_helm/
