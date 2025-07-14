@@ -13,7 +13,7 @@ spec:
       releaseName: {{ .Values.istioConfig.helm.releaseName.prometheus }}
       insecureSkipTLSVerify: {{ .Values.istioConfig.helm.insecureSkipTLSVerify.prometheus }}
   destination:
-    server: {{ .Values.global.destination.server }}
+    server: {{ .Values.global.destinationApplication.server }}
     namespace: {{ .Values.global.namespaces.prometheus }}
   syncPolicy:
     automated:

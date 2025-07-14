@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: {{ .Values.istioConfig.helm.releaseName.istioD }}
   destination:
-    server: {{ .Values.global.destination.server }}
+    server: {{ .Values.global.destinationApplication.server }}
     namespace: {{ .Values.global.namespaces.istio }}
   syncPolicy:
     automated:
