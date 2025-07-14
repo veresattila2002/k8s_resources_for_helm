@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Release.Name }}-application
+  name: {{ .Release.Name }}-first-application
   namespace: {{ .Values.global.namespaces.argo }}
 spec:
   project: {{ .Values.global.project }}
