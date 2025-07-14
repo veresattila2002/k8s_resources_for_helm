@@ -4,13 +4,7 @@ description: A Helm chart for Kubernetes
 
 type: application
 
-version: 0.1.8
+version: 0.1.9
 
 appVersion: "1.16.0"
-dependencies:
-  - name: spring-boot-app
-    version: 0.1.9
-    repository: https://veresattila2002.github.io/k8s_resources_for_helm/
-  - name: spring-boot-second-app
-    version: 0.1.9
-    repository: https://veresattila2002.github.io/k8s_resources_for_helm/
+

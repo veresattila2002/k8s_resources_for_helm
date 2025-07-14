@@ -58,84 +58,25 @@ global:
     hostSecondApp: spring-boot-second-app.spring-boot-second-app.svc.cluster.local
     port:
       number: 80
+app-of-apps:
+  spring-boot-app:
+    image:
+      name: ghcr.io/veresattila2002/helloword
+      tag: "3.0"
 
-istio-resources:
+    service:
+      servicePort:
+        protocol: TCP
+        port: 80
+      serviceType: ClusterIP
 
-  ingressGateway:
-    metadata: 
-      name: spring-boot-app-gateway
-    istio:  ingressgateway
+  spring-boot-second-app:
+    image:
+      name: ghcr.io/veresattila2002/ujsecondapp
+      tag: "2.0"
 
-  service:
-    port:
-      number: 80
-      name: http
-      protocol: HTTP
-
-  istioConfig:
-    name: 
-      istioBase: istio-base
-      istioD: istiod
-      prometheus: prometheus
-      kiali: kiali
-
-    repoUrl:
-      istioBase: https://istio-release.storage.googleapis.com/charts
-      istioD: https://istio-release.storage.googleapis.com/charts
-      prometheus: https://prometheus-community.github.io/helm-charts
-      kiali: https://kiali.org/helm-charts
-
-    chart:
-      istioBase: base
-      istioD: istiod
-      prometheus: prometheus
-      kiali: kiali-server
-
-    targetRevision:
-      istioBase: 1.26.2
-      istioD: 1.26.2
-      prometheus: 25.21.0
-      kiali: 1.82.0
-
-    helm:
-      releaseName:
-        istioBase: istio-base
-        istioD: istiod
-        prometheus: prometheus
-        kiali: kiali
-      insecureSkipTLSVerify:
-        prometheus: true
-
-  kiali:
-    auth:
-      strategy: anonymous
-    deployment:
-      ingress_enabled: true
-    external_services:
-      istio:
-        root_namespace: istio-system
-      prometheus:
-        url: "http://prometheus-server.prometheus-system:80"
-    istio_namespace: istio-system
-
-spring-boot-app:
-  image:
-    name: ghcr.io/veresattila2002/helloword
-    tag: "3.0"
-
-  service:
-    servicePort:
-      protocol: TCP
-      port: 80
-    serviceType: ClusterIP
-
-spring-boot-second-app:
-  image:
-    name: ghcr.io/veresattila2002/ujsecondapp
-    tag: "2.0"
-
-  service:
-    servicePort:
-      protocol: TCP
-      port: 80
-    serviceType: ClusterIP
+    service:
+      servicePort:
+        protocol: TCP
+        port: 80
+      serviceType: ClusterIP
