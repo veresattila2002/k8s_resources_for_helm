@@ -14,6 +14,3 @@ dependencies:
   - name: spring-boot-second-app
     version: 0.1.9
     repository: https://veresattila2002.github.io/k8s_resources_for_helm/
-  - name: istio-resources
-    version: 0.1.7
-    repository: https://veresattila2002.github.io/k8s_resources_for_helm/
