@@ -46,7 +46,7 @@ global:
 
   source:
     targetRevision: 0.1.2
-    targetRevisionIstio: 0.1.5
+    targetRevisionIstio: 0.1.6
     path: dev
     pathApp: app-of-apps/dev
     pathFirstApp: firstApp
